@@ -1,1 +1,1 @@
-print '{"result": 1}'
+print '{"lat": 22.73, "lng": 120.288, "alt": 20, "speed": 0, "mq3": 230.006}'
