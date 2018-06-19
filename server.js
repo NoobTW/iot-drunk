@@ -35,5 +35,5 @@ router
 
 app.use(router.routes());
 app.listen(3000, () => {
-	console.log('不要，8080');
+	console.log('Server running at port 3000. Visit http://10.1.220.207:3000');
 });
