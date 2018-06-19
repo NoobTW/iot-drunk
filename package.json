@@ -1,0 +1,25 @@
+{
+  "name": "koa-drunk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NoobTW/koa-drunk.git"
+  },
+  "author": "NoobTW",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NoobTW/koa-drunk/issues"
+  },
+  "homepage": "https://github.com/NoobTW/koa-drunk#readme",
+  "dependencies": {
+    "koa": "^2.5.1",
+    "koa-mount": "^3.0.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0"
+  }
+}
