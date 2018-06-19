@@ -28,8 +28,7 @@ router
 
 	.get('/api/drunk', async ctx => {
 		// ctx.body = 'gay';
-
-		const response = await exec(`python ${__dirname}/python/gay.py`);
+		const response = await exec(`python ${__dirname}/python/drunk.py`);
 		ctx.body = response;
 	});
 
