@@ -30,7 +30,6 @@ router
 		// ctx.body = 'gay';
 
 		const response = await exec(`python ${__dirname}/python/gay.py`);
-		console.log(`python ${__dirname}/python/gay.py`);
 		ctx.body = response;
 	});
 
