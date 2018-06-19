@@ -25,6 +25,9 @@ function drunk(){
 		});
 		infoWindow.open(map, marker);
 
+		res.mq3 = Number(res.mq3.split(' ')[0]);
+		res.mq3 = (res.mq3 / 10) * (5.0/1024.0) * 0.67;
+
 		$('.face').show();
 		if(res.mq3 > 0.15){
 			$('.face').html('<i class="fas fa-frown"></i> 喝醉惹');
