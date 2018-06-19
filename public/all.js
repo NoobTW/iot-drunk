@@ -13,6 +13,7 @@ function drunk(){
 	$.getJSON('/api/drunk', function(res){
 		map.setCenter(new google.maps.LatLng(res.lat, res.lng));
 		$('#map').fadeIn();
+		if(marker) marker.setMap(null);
 		marker = new google.maps.Marker({
 			title: 'fuck you',
 			position: {lat: res.lat, lng: res.lng},

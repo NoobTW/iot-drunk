@@ -1,9 +1,13 @@
 import os
 from gps import *
 from time import *
+import serial
 import time
 import threading
 import json
+
+ser = serial.Serial('/dev/ttyUSB0',9600)
+read_serial = ser.readline()
 
 gpsd = None #seting the global variable
 
@@ -34,6 +38,7 @@ if __name__ == '__main__':
   dict['lng'] = gpsd.fix.longitude
   dict['alt'] = gpsd.fix.altitude
   dict['speed'] = gpsd.fix.speed
+  dict['mq3'] = read_serial
   data = json.dumps(dict)
   print(data)
 
