@@ -20,13 +20,13 @@ function drunk(){
 			map: map,
 		});
 		if(infoWindow) infoWindow.close();
-		infoWindow = new google.maps.InfoWindow({
-			content: '海拔高度：' + res.alt + '<br>瞬時速度：' + res.speed + '<br>酒精濃度：' + res.mq3
-		});
-		infoWindow.open(map, marker);
-
 		res.mq3 = Number(res.mq3.split(' ')[0]);
 		res.mq3 = (res.mq3 / 10) * (5.0/1024.0) * 0.67;
+		res.mq3 = Math.round(res.mq3 * 100) / 100;
+		infoWindow = new google.maps.InfoWindow({
+			content: '海拔高度：' + res.alt + '<br>瞬時速度：' + res.speed + '<br>酒精濃度：' + res.mq3 + ' mg/L'
+		});
+		infoWindow.open(map, marker);
 
 		$('.face').show();
 		if(res.mq3 > 0.15){
