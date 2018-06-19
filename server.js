@@ -1,3 +1,4 @@
+const fs = require('fs');
 const koa = require('koa');
 const koaRouter = require('koa-router');
 const koaServe = require('koa-static');
@@ -28,11 +29,24 @@ router
 
 	.get('/api/drunk', async ctx => {
 		// ctx.body = 'gay';
+		const file = await fs.readFileSync(`${__dirname}/python/drowsiness-detection/eye.txt`, 'utf-8');
+		console.log(file)
 		const response = await exec(`python ${__dirname}/python/drunk.py`);
-		ctx.body = response;
+		let obj;
+		try{
+			obj = JSON.parse(response);
+			obj.danger = file.trim() === 'bad' ? true : false;
+		}catch(e){
+		}
+		ctx.body = obj;
 	});
 
 app.use(router.routes());
 app.listen(3000, () => {
+	//exec(`python ${__dirname}/python/drowsiness-detection/start.sh`);	
 	console.log('Server running at port 3000. Visit http://10.1.220.207:3000');
+});
+
+process.on('exit', () => {
+	//exec('killall python');
 });

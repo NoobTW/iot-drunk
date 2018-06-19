@@ -11,6 +11,7 @@ function initMap(){
 
 function drunk(){
 	$.getJSON('/api/drunk', function(res){
+		console.log(res)
 		map.setCenter(new google.maps.LatLng(res.lat, res.lng));
 		$('#map').fadeIn();
 		if(marker) marker.setMap(null);
@@ -41,5 +42,5 @@ $('#measure').on('click', function(){
 	drunk();
 	setInterval(function(){
 		drunk()
-	}, 1000);
+	}, 2000);
 });
