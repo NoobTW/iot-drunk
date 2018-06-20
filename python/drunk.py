@@ -31,7 +31,7 @@ if __name__ == '__main__':
   #print gpsd.fix.latitude,', ',gpsd.fix.longitude,'  Time: ',gpsd.utc
   iterator = 0
   while (gpsd.fix.latitude == 0) and (iterator < 10):
-    iterator++
+    iterator += 1
     time.sleep(1) #set to whatever
 
   dict = {};
