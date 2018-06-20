@@ -29,8 +29,9 @@ if __name__ == '__main__':
   gpsp.start() # start it up
   #It may take a second or two to get good data
   #print gpsd.fix.latitude,', ',gpsd.fix.longitude,'  Time: ',gpsd.utc
-  while gpsd.fix.latitude == 0:
-
+  iterator = 0
+  while gpsd.fix.latitude == 0 && iterator < 10:
+    iterator++
     time.sleep(1) #set to whatever
 
   dict = {};
