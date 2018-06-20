@@ -35,6 +35,12 @@ function drunk(){
 		}else{
 			$('.face').html('<i class="fas fa-smile"></i> 你很棒');
 		}
+
+		if(res.danger){
+			$('.face').html($('.face').html()  + '<br><i class="fas fa-exclamation-triangle"></i> 危險');
+		}else{
+			$('.face').html($('.face').html()  + '<br><i class="fas fa-check-circle"></i> 安全');
+		}
 	});
 }
 
