@@ -30,7 +30,6 @@ router
 	.get('/api/drunk', async ctx => {
 		// ctx.body = 'gay';
 		const file = await fs.readFileSync(`${__dirname}/python/drowsiness-detection/eye.txt`, 'utf-8');
-		console.log(file)
 		const response = await exec(`python ${__dirname}/python/drunk.py`);
 		let obj;
 		try{
@@ -44,7 +43,7 @@ router
 app.use(router.routes());
 app.listen(3000, () => {
 	//exec(`python ${__dirname}/python/drowsiness-detection/start.sh`);	
-	console.log('Server running at port 3000. Visit http://10.1.220.207:3000');
+	console.log('Server running at port 3000. Visit http://10.1.220.40:3000/');
 });
 
 process.on('exit', () => {
